@@ -13,6 +13,21 @@ function signup() {
     let inputgender = document.getElementById("inputgender").value;
     let floatingimage = document.getElementById("floatingimage");
 
+let obj = {
+    
+
+    floatingusername,
+    floatingemail,
+    floatingPassword,
+    floatingconfirmPassword,
+    floatingAddress,
+    floatingdob,
+    floatingnumber,
+    inputZip,
+    inputgender,
+    floatingimage
+
+}
 
 
     var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -114,3 +129,24 @@ function openNav() {
 
 let dashboardusername = document.getElementById("username");
 dashboardusername.innerHTML += localStorage.getItem("username");
+
+
+function deleteacc(){
+    let dashDiv = document.getElementById("dashDiv");
+        dashDiv.style.display = "none";
+
+
+        let lodingpagetimeout = setTimeout(function () {
+            let lodingDiv = document.getElementById("lodingDiv");
+            lodingDiv.style.display = "block";
+        }, 1000)
+
+        setTimeout(function () {
+            let loginmsg = document.getElementById("loginmsg")
+            loginmsg.style.display = "block";
+            let waitingDiv = document.getElementById("waitingDiv")
+            waitingDiv.style.display = "none";
+        }, 6000)
+
+       
+}

@@ -19,33 +19,55 @@
 
 <body>
 
+    <div id="dashDiv">
 
 
-    
-    
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="personaldetails.html">Personal details</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="loginindex.html">logout</a>
-    </div>
-    
-    
-    
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()" > <span class="badge bg-success" > Dashboard</span></span>
-        
-        
+
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="personaldetails.html">Your Profile</a>
+            <a href="loginindex.html">logout</a>
+            <a href="#" onclick="deleteacc()" > Delete Account</a>
+        </div>
+
+
+
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()"> <span class="badge bg-success">
+                Dashboard</span></span>
+
+
         <div class="container col-md-6">
 
-            
-            <div class="alert alert-success fw-bolder"  role="alert" style="background-color: green;">
-                <div class="mx-auto" style="width: 130px; color: white;" id="username">
+
+            <div class="alert alert-success fw-bolder text-center " role="alert"
+                style="background-color: green;color: white;">
+                <div class="mx-auto" id="username">
                     wellcome
                 </div>
             </div>
-            
+
         </div>
+
+    </div>
+
+    <div class="container-sm my-5 py-5 border border-success  " style="border-radius: 50px; display: none;"
+        id="lodingDiv">
+
+        <div class="text-center" id="waitingDiv">
+            <div class="spinner-grow" role="status" style="width: 5rem; height: 5rem;">
+            </div>
+            <div class="alert alert-primary my-5 mx-5" role="alert">
+                Please wait! Deleting your account
+            </div>
+        </div>
+
+        <div class="alert alert-primary my-5 mx-5 text-center" role="alert" style="display:none ;" id="loginmsg">
+            Account Deleted successfully <span class="bg-success"
+                onclick=" localStorage.clear(); location.replace('signupindex.html');"><a href="loginindex.html"
+                    class="btn btn-success">Go to signup Page</a></span>
+        </div>
+    </div>
 
 
 
@@ -56,7 +78,7 @@
         crossorigin="anonymous"></script>
 
 
-    <script src="img.js"></script>
+    <!-- <script src="img.js"></script> -->
     <script src="app.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
