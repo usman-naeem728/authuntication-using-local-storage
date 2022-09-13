@@ -1,13 +1,3 @@
-let image_input = document.querySelector("#floatingimage");
-
-image_input.addEventListener("change", function () {
-    let reader = new FileReader();
-    reader.addEventListener("load", () => {
-        let uploaded_image = reader.result;
-        document.querySelector("#display-image").style.backgroundImage = `url(${uploaded_image})`;
-    });
-    reader.readAsDataURL(this.files[0]);
-});
 
 
 function signup() {
@@ -21,25 +11,18 @@ function signup() {
     let floatingnumber = document.getElementById("floatingnumber").value;
     let inputZip = document.getElementById("inputZip").value;
     let inputgender = document.getElementById("inputgender").value;
-    let floatingimage = document.getElementById("floatingimage").value;
+    let floatingimage = document.getElementById("floatingimage");
 
 
-    // function validateEmail() {
-    // var eEntered = document.getElementById("address").value;
-    // if (!(eEntered.match(emailCorrectPattern))) {
-        // alert("Please correct email address");
-        // return false;
-        // }
-        // }
-        
-        var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
-    if (floatingusername === "" || floatingemail === "" || floatingPassword === "" || floatingconfirmPassword === "" || floatingAddress === "" || floatingdob === "" || floatingnumber === "" || inputZip === "" || inputgender === "" || floatingimage === "" || !regex.test(floatingemail) ) {
-      document.getElementById("verification").style.display = "block"
+    if (floatingusername === "" || floatingemail === "" || floatingPassword === "" || floatingconfirmPassword === "" || floatingAddress === "" || floatingdob === "" || floatingnumber === "" || inputZip === "" || inputgender === "" || floatingimage === "" || !regex.test(floatingemail)) {
+        document.getElementById("verification").style.display = "block"
 
-    }   
-    else{
+    }
+    else {
         let signupdiv = document.getElementById("signupdiv");
         signupdiv.style.display = "none";
 
@@ -58,20 +41,76 @@ function signup() {
 
     }
 
-    
 
 
 
+    var username = localStorage.setItem("username", floatingusername)
     var email = localStorage.setItem("email", floatingemail);
     var pass = localStorage.setItem("password", floatingPassword);
+    var address = localStorage.setItem("address", floatingAddress);
+    var phone = localStorage.setItem("phnumber", floatingnumber);
+    var zipcode = localStorage.setItem("zipcode", inputZip);
+    var dob = localStorage.setItem("dob", floatingdob);
+    var gender = localStorage.setItem("gender", inputgender);
+    var image = localStorage.setItem("image", floatingimage)
+
+    
+    // console.log(floatingimage[this.spriteCostumeCount],"heloo")
+
+
+    // bannerImage = document.getElementById('floatingimage');
+    // imgData = getBase64Image(bannerImage);
+    // localStorage.setItem("imgData", imgData);
+    
+    // function getBase64Image(img) {
+    //     var canvas = document.createElement("canvas");
+    //     canvas.width = img.width;
+    //     canvas.height = img.height;
+
+    //     var ctx = canvas.getContext("2d");
+    //     ctx.drawImage(img,0,0);
+
+    //     var dataURL = canvas.toDataURL("image/png");
+
+    //     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+    // }
+
+
+    // var dataImage = localStorage.getItem('imgData');
+    // bannerImg = document.getElementById('tableBanner');
+    // bannerImg.src = "data:image/png;base64," + dataImage;
+
+
 }
- function dashboardlogin(){
+
+
+
+
+////// dashboard js//////////
+
+
+
+
+function dashboardlogin() {
     let cemail = document.getElementById("floatingloginemail").value
     let cpass = document.getElementById("floatingloginPassword").value
-    
-    if(cemail ==  localStorage.getItem("email")  && cpass ==  localStorage.getItem("password")){
-           location.replace("dashboard.html")
-    }else{
+
+    if (cemail == localStorage.getItem("email") && cpass == localStorage.getItem("password")) {
+        location.replace("dashboard.html")
+    } else {
         alert("account not found")
     }
- }
+}
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+
+
+let dashboardusername = document.getElementById("username");
+dashboardusername.innerHTML += localStorage.getItem("username");

@@ -20,34 +20,34 @@
 <body>
 
 
-
-    
-    
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="personaldetails.html">Personal details</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="loginindex.html">logout</a>
+    <div class="alert alert-success text-center" role="alert">
+        Your personal details
     </div>
-    
-    
-    
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()" > <span class="badge bg-success" > Dashboard</span></span>
-        
-        
-        <div class="container col-md-6">
 
-            
-            <div class="alert alert-success fw-bolder"  role="alert" style="background-color: green;">
-                <div class="mx-auto" style="width: 130px; color: white;" id="username">
-                    wellcome
-                </div>
-            </div>
-            
-        </div>
+<div class="container" style="display: flex;">
 
-
+    <ul class="list-group col-md-4">
+        <li class="list-group-item">username</li>
+        <li class="list-group-item">email</li>
+        <li class="list-group-item">password</li>
+        <li class="list-group-item">Date Of birth</li>
+        <li class="list-group-item">Ph Number</li>
+        <li class="list-group-item">Gender</li>
+        <li class="list-group-item">PostalCode</li>
+        <li class="list-group-item">Address</li>
+    </ul>
+    <ul class="list-group col-md-4">
+        <li class="list-group-item " id="name">ewrwerewr</li>
+        <li class="list-group-item " id="email"></li>
+        <li class="list-group-item " id="pass"></li>
+        <li class="list-group-item " id="dob"></li>
+        <li class="list-group-item " id="ph"></li>
+        <li class="list-group-item " id="gender"></li>
+        <li class="list-group-item " id="postcode"></li>
+        <li class="list-group-item " id="address"></li>
+    </ul>
+    
+</div>
 
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -56,8 +56,8 @@
         crossorigin="anonymous"></script>
 
 
-    <script src="img.js"></script>
-    <script src="app.js"></script>
+    <!-- <script src="img.js"></script> -->
+    <script src="personaldetails.js"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
