@@ -67,8 +67,6 @@ let obj = {
     var zipcode = localStorage.setItem("zipcode", inputZip);
     var dob = localStorage.setItem("dob", floatingdob);
     var gender = localStorage.setItem("gender", inputgender);
-    var image = localStorage.setItem("image", floatingimage)
-
     
     // console.log(floatingimage[this.spriteCostumeCount],"heloo")
 
